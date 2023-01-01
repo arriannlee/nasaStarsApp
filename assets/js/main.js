@@ -4,38 +4,76 @@
 	License: pixelarity.com/license
 */
 
-fetch("https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtlPKsg3S1p7pV")
+
+// fetch("https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtlPKsg3S1p7pV")
+//     .then(res => res.json()) // parse response as JSON
+//     .then(data => {
+//       console.log(data)
+//       // document.querySelector('.todaysDate').innerText = data.date
+//       document.querySelector('.explanation').innerText = data.explanation
+//       document.querySelector('.onThisDay').src = data.hdurl
+//       document.querySelector('#datePicker').date = data.date
+
+//     })
+//     .catch(err => {
+//         console.log(`error ${err}`)
+//     });
+
+
+//date picker
+// document.getElementsByClassName('.source').style.display = 'null';
+
+document.querySelector('.nasaVideo').style.display = 'none'
+document.querySelector('.nasaImage').style.display = 'none'
+
+
+document.querySelector('.this').addEventListener('click', getFetch)
+function getFetch(){
+  const choice = document.querySelector('input').value
+  console.log(choice)
+
+fetch(`https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtlPKsg3S1p7pV&date=${choice}`)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
       console.log(data)
-      // document.querySelector('.todaysDate').innerText = data.date
+      if(data.media_type === 'image'){
+        document.querySelector('.nasaImage').src = data.hdurl
+        document.querySelector('.nasaImage').style.display = ''
+        document.querySelector('.nasaVideo').style.display = 'none'
+      }else if(data.media_type === 'video'){
+        document.querySelector('.nasaVideo').src = data.url
+        document.querySelector('.nasaVideo').style.display = ''
+        document.querySelector('.nasaImage').style.display = 'none'
+      }
+      // document.querySelector('#datePicker').date = data.date
+
       document.querySelector('.explanation').innerText = data.explanation
-      document.querySelector('.onThisDay').src = data.url
-      document.querySelector('#datePicker').date = data.date
+      document.querySelector('.title').innerText = data.title
+
 
     })
     .catch(err => {
         console.log(`error ${err}`)
     });
 
+  }
 
-//date picker
 
-datePicker.max = new Date().toISOString().split("T")[0];
+// datePicker.max = new Date().toISOString().split("T")[0];
 
-(function($) {
+// (function($) {
 
-	var $window = $(window),
-		$body = $('body'),
-		settings = {
+// 	var $window = $(window),
+// 		$body = $('body'),
+// 		settings = {
 
-			// Parallax background effect?
-				parallax: true,
+// 			// Parallax background effect?
+// 				parallax: true,
 
-			// Parallax factor (lower = more intense, higher = less intense).
-				parallaxFactor: 5
+// 			// Parallax factor (lower = more intense, higher = less intense).
+// 				parallaxFactor: 5
 
-		};
+// 		};
 
 	// Breakpoints.
 		breakpoints({
@@ -125,4 +163,4 @@ datePicker.max = new Date().toISOString().split("T")[0];
 
 		}
 
-})(jQuery);
+(jQuery);

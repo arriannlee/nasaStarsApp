@@ -122,7 +122,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #689aa0 !important;
+			color: #fff !important;
 			text-decoration: none;
 		}
 
@@ -1822,7 +1822,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #689aa0;
+			border-color: #fff;
 		}
 
 	select {
@@ -1926,7 +1926,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #689aa0;
+			border-color: #fff;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2014,9 +2014,11 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		border: 0;
+		border: 0.10px solid #fff;
 		display: inline-block;
 		position: relative;
+    border-radius: 8px;
+  
 	}
 
 		.image img {
@@ -2057,7 +2059,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
+      margin: 2em 0 2em 0;
 			width: 100%;
 		}
 
@@ -2065,6 +2067,25 @@ input, select, textarea {
 				width: 100%;
 			}
  
+/* my edits */
+
+      .onThisDay {
+        border-radius: 8px;
+        border: 0.5px solid #757575;
+        margin: 6em auto 3em auto;
+        width: 51em;
+      }
+    
+      .explanation{
+        text-align: justify;
+      }
+      .title{
+        text-align: center;
+      }
+      .results{
+        margin: 0 3em ;
+        padding-bottom: 1em;
+      }
     
 /* List */
 
@@ -2342,6 +2363,37 @@ input, select, textarea {
 				border-top: 0;
 			}
 
+      /* Date Picker */
+
+      #datePicker {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        background-color: #fff;
+        border-radius: 8px;
+        border: solid 1px #4c4b4d !important;
+        color: #4c4b4d !important;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 0.8em;
+        font-weight: 300;
+        height: 3.5em;
+        letter-spacing: 0.25em;
+        line-height: 3.35em;
+        padding: 0 3em;
+        text-align: center;
+        text-decoration: none;
+        text-indent: 0.25em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin: 1em;
+      }
+
 /* Button */
 
 	input[type="submit"],
@@ -2433,8 +2485,8 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #689aa0;
-			border-color: #689aa0 !important;
+			background-color: #fff;
+			border-color: #fff !important;
 			color: #ffffff !important;
 		}
 
@@ -2623,14 +2675,14 @@ input, select, textarea {
 
 	#header {
 		background-color: #19181a;
-		border-radius: 8px 8px 0 0;
+		border-radius: 8px;
 		border-top: 0 !important;
 		position: relative;
 		text-align: center;
 	}
 
-		#header:before {
-			background: #689aa0;
+		 #header:before {
+			background: #fff;
 			content: '';
 			display: block;
 			height: 8em;
@@ -2639,14 +2691,14 @@ input, select, textarea {
 			position: absolute;
 			top: -6em;
 			width: 4em;
-		}
+		} 
 
 		#header:after {
 			-moz-transform: rotate(45deg);
 			-webkit-transform: rotate(45deg);
 			-ms-transform: rotate(45deg);
 			transform: rotate(45deg);
-			background: #689aa0;
+			background: #fff;
 			content: '';
 			display: block;
 			height: 2.8em;
@@ -2655,10 +2707,10 @@ input, select, textarea {
 			position: absolute;
 			top: 0.615em;
 			width: 2.8em;
-		}
+		} 
 
 		#header > header {
-			padding: 8em 3em 6em 3em;
+			padding: 8em 3em 0 3em;
 		}
 
 			#header > header h1 {
@@ -2817,7 +2869,7 @@ input, select, textarea {
 /* Copyright */
 
 	#copyright {
-		margin-bottom: 6em;
+		margin-bottom: 1em;
 		text-align: center;
 	}
 
@@ -3276,7 +3328,7 @@ input, select, textarea {
 			#wrapper {
 				border-radius: 0;
 				margin-top: 0;
-				width: 100%;
+				width: 90%;
 			}
 
 				#wrapper > .main {
@@ -3286,7 +3338,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				border-radius: 0;
+				border-radius: 8px;
 			}
 
 				#header > header {
@@ -3315,5 +3367,13 @@ input, select, textarea {
 					top: 1em;
 					width: calc(100% + 3em);
 				}
+    
+
+        .results{
+          margin: 0 1em;
+          padding-bottom: 0.1em ;
+        }
 
 	}
+
+
