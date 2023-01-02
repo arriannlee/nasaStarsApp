@@ -1,27 +1,4 @@
-/*
-	Locus by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
 
-
-// fetch("https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtlPKsg3S1p7pV")
-//     .then(res => res.json()) // parse response as JSON
-//     .then(data => {
-//       console.log(data)
-//       // document.querySelector('.todaysDate').innerText = data.date
-//       document.querySelector('.explanation').innerText = data.explanation
-//       document.querySelector('.onThisDay').src = data.hdurl
-//       document.querySelector('#datePicker').date = data.date
-
-//     })
-//     .catch(err => {
-//         console.log(`error ${err}`)
-//     });
-
-
-//date picker
-// document.getElementsByClassName('.source').style.display = 'null';
 
 document.querySelector('.nasaVideo').style.display = 'none'
 document.querySelector('.nasaImage').style.display = 'none'
@@ -45,8 +22,6 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtl
         document.querySelector('.nasaVideo').style.display = ''
         document.querySelector('.nasaImage').style.display = 'none'
       }
-      // document.querySelector('#datePicker').date = data.date
-
       document.querySelector('.explanation').innerText = data.explanation
       document.querySelector('.title').innerText = data.title
 
@@ -59,21 +34,6 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtl
   }
 
 
-// datePicker.max = new Date().toISOString().split("T")[0];
-
-// (function($) {
-
-// 	var $window = $(window),
-// 		$body = $('body'),
-// 		settings = {
-
-// 			// Parallax background effect?
-// 				parallax: true,
-
-// 			// Parallax factor (lower = more intense, higher = less intense).
-// 				parallaxFactor: 5
-
-// 		};
 
 	// Breakpoints.
 		breakpoints({
