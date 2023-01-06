@@ -44,83 +44,83 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=eoILEWXdS1q9v63gjvJo8DXrtFrtl
 			xsmall:   [ null,      '480px'  ]
 		});
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+// 	// Play initial animations on page load.
+// 		$window.on('load', function() {
+// 			window.setTimeout(function() {
+// 				$body.removeClass('is-preload');
+// 			}, 100);
+// 		});
 
-	// Nav Panel.
+// 	// Nav Panel.
 
-		// Button.
-			$(
-				'<div id="navButton">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-				'</div>'
-			)
-				.appendTo($body);
+// 		// Button.
+// 			$(
+// 				'<div id="navButton">' +
+// 					'<a href="#navPanel" class="toggle"></a>' +
+// 				'</div>'
+// 			)
+// 				.appendTo($body);
 
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'top',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
+// 		// Panel.
+// 			$(
+// 				'<div id="navPanel">' +
+// 					'<nav>' +
+// 						$('#nav').navList() +
+// 					'</nav>' +
+// 				'</div>'
+// 			)
+// 				.appendTo($body)
+// 				.panel({
+// 					delay: 500,
+// 					hideOnClick: true,
+// 					resetScroll: true,
+// 					resetForms: true,
+// 					side: 'top',
+// 					target: $body,
+// 					visibleClass: 'navPanel-visible'
+// 				});
 
-	// Parallax background.
+// 	// Parallax background.
 
-		// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-			if (browser.name == 'ie'
-			||	browser.name == 'edge'
-			||	browser.mobile)
-				settings.parallax = false;
+// 		// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
+// 			if (browser.name == 'ie'
+// 			||	browser.name == 'edge'
+// 			||	browser.mobile)
+// 				settings.parallax = false;
 
-		if (settings.parallax) {
+// 		if (settings.parallax) {
 
-			var $dummy = $(), $bg;
+// 			var $dummy = $(), $bg;
 
-			$window
-				.on('scroll.locus_parallax', function() {
+// 			$window
+// 				.on('scroll.locus_parallax', function() {
 
-					// Adjust background position.
-					// Note: If you've removed the background overlay image, remove the "top left, " bit.
-						$bg.css('background-position', 'top left, center ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
+// 					// Adjust background position.
+// 					// Note: If you've removed the background overlay image, remove the "top left, " bit.
+// 						$bg.css('background-position', 'top left, center ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
 
-				})
-				.on('resize.locus_parallax', function() {
+// 				})
+// 				.on('resize.locus_parallax', function() {
 
-					// If we're in a situation where we need to temporarily disable parallax, do so.
-					// Note: If you've removed the background overlay image, remove the "top left, " bit.
-						if (breakpoints.active('<=medium')) {
+// 					// If we're in a situation where we need to temporarily disable parallax, do so.
+// 					// Note: If you've removed the background overlay image, remove the "top left, " bit.
+// 						if (breakpoints.active('<=medium')) {
 
-							$body.css('background-position', 'top left, top center');
-							$bg = $dummy;
+// 							$body.css('background-position', 'top left, top center');
+// 							$bg = $dummy;
 
-						}
+// 						}
 
-					// Otherwise, continue as normal.
-						else
-							$bg = $body;
+// 					// Otherwise, continue as normal.
+// 						else
+// 							$bg = $body;
 
-					// Trigger scroll handler.
-						$window.triggerHandler('scroll.locus_parallax');
+// 					// Trigger scroll handler.
+// 						$window.triggerHandler('scroll.locus_parallax');
 
-				})
-				.trigger('resize.locus_parallax');
+// 				})
+// 				.trigger('resize.locus_parallax');
 
-		}
+// 		}
 
-(jQuery);
+// (jQuery);
